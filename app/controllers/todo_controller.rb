@@ -17,10 +17,10 @@ class TodoController < ApplicationController
            @todo_description = "do homework"
            @todo_promodo_estimate = 8
         elsif todo_id == "2"
-           @todo_description = "take out trash"
+           @todo_description = "bring it to the curb"
            @todo_promodo_estimate = 8
         elsif todo_id =="3"
-           @todo_description = "take out trash"
+           @todo_description = "Do it by 8:00 PM"
            @todo_promodo_estimate = 8
         end
     end
