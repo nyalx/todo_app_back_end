@@ -22,8 +22,8 @@ end
 def create
     t= Todo.new
     t.description= params['description']
-    t.pomodoro_estimate = params ['pomodoro']
+    t.pomodoro_estimate = params['pomodoro']
     t.save
-    redirect_to/todo/show/7 +t.id
+    redirect_to "/todo/show/#{t.id}"
 end
 end
