@@ -1,21 +1,29 @@
 class TodoController < ApplicationController
     def index
+        id = 1
+        if id == '2 '
+           @todo_description = "do homework"
+           @todo_pomodoro_estimate = 8
+        end
     end
     def show
         #Get the number the user typed in the URL
-        todo_id =params[:id] 
-        if todo_id== "1"
-           @todo_description = "do homework"
-           @todo_promodo_estimate = 8
-        elsif todo_id == "2"
-           @todo_description = "bring it to the curb"
-           @todo_promodo_estimate = 8
-        elsif todo_id =="3"
-           @todo_description = "Do it by 8:00 PM"
-           @todo_promodo_estimate = 4
-         elsif todo_id=="4"
-         @todo_description = "study for global and chemistry"
-         @todo_promodo_estimate = 8
-        end
+        todo_id =params[:id]
+        
+        #Grab the todo with that id from the database 
+        @todo= Todo.find_by_id(todo_id)
+        
+        #Set the variables shared with template to the values we got 
+        #from the database
     end
+def new
+end
+
+def create
+    t= Todo.new
+    t.description= params['description']
+    t.pomodoro_estimate = params ['pomodoro']
+    t.save
+    redirect_to/todo/show/7 +t.id
+end
 end
